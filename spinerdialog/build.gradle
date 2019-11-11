@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'android-maven'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 29
+        versionCode 22
+        versionName "2.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -30,6 +30,6 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
     apply plugin: 'com.github.dcendents.android-maven'
-    group = 'com.github.MdFarhanRaja'
+    group = 'com.github.igorka48'
     testImplementation 'junit:junit:4.12'
 }

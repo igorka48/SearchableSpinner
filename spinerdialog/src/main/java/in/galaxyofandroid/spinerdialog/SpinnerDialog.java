@@ -34,6 +34,7 @@ public class SpinnerDialog {
     boolean cancellable = false;
     boolean showKeyboard = false;
     boolean useContainsFilter = false;
+    boolean hideSearch = false;
     int titleColor,searchIconColor,searchTextColor,itemColor,itemDividerColor,closeColor;
 
     private void initColor(Context context){
@@ -84,6 +85,7 @@ public class SpinnerDialog {
     public void showSpinerDialog() {
         AlertDialog.Builder adb = new AlertDialog.Builder(context);
         View v = context.getLayoutInflater().inflate(R.layout.dialog_layout, null);
+        View searchLayout = v.findViewById(R.id.searchLayout);
         TextView rippleViewClose = (TextView) v.findViewById(R.id.close);
         TextView title = (TextView) v.findViewById(R.id.spinerTitle);
         ImageView searchIcon=(ImageView) v.findViewById(R.id.searchIcon);
@@ -104,6 +106,7 @@ public class SpinnerDialog {
         searchBox.setTextColor(searchTextColor);
         rippleViewClose.setTextColor(closeColor);
         searchIcon.setColorFilter(searchIconColor);
+        searchLayout.setVisibility(hideSearch ? View.GONE : View.VISIBLE);
 
 
 //        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, R.layout.items_view, items);
@@ -210,6 +213,9 @@ public class SpinnerDialog {
     private boolean isUseContainsFilter() {
         return useContainsFilter;
     }
+    private boolean isHideSearch() {
+        return hideSearch;
+    }
 
 
     public void setShowKeyboard(boolean showKeyboard) {
@@ -218,6 +224,10 @@ public class SpinnerDialog {
 
     public void setUseContainsFilter(boolean useContainsFilter) {
         this.useContainsFilter = useContainsFilter;
+    }
+
+    public void setHideSearch(boolean hideSearch) {
+        this.hideSearch = hideSearch;
     }
 
     public void setTitleColor(int titleColor) {
