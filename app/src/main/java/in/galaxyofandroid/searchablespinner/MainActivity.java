@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         spinnerDialog.setCancellable(true);
         spinnerDialog.setShowKeyboard(false);
 
-
         spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
             public void onClick(String item, int position) {
